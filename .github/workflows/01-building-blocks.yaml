@@ -16,6 +16,6 @@ jobs:
         run: |
           echo "I"
           echo "will"
-          echo "fail"
+          echo "fail."
       - name: Say Goodbye
         run: echo "Goodbye, World!"
