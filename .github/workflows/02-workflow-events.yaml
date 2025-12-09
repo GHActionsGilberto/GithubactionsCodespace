@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Show the trigger
-        run: echo "Event trigger" + "${{ github.event_name }}"
+        run: echo "Event trigger ${{ github.event_name }}" + "${{ github.event_name }}"
 
   echo-goodbye:
     runs-on: ubuntu-latest
