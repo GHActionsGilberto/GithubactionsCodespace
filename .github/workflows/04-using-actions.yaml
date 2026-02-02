@@ -1,14 +1,12 @@
-name: 03 - Using Actions
-on:
-  push:
-  workflow_dispatch:
+name: 04 - Using Actions
+on: push
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Printing folders
-        run: ls
+        - name: Checkout code
+          uses: actions/checkout@v4
+        - name: Printing folders
+          run: ls
     # Install deps of our react app
     # Execute automated tests
