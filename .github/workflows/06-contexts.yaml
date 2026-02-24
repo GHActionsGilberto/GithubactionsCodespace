@@ -34,7 +34,6 @@ jobs:
       - name: Display variables from env section
         env:
           MY_VAR: "This is a overwritten from the step env section"
-          MY_VAR2: "This is overwritten variable from the step env section"
         run: |
             echo "The variable value is ${{env.MY_VAR}}"
             echo "The variable value is ${{env.MY_VAR2}}"
