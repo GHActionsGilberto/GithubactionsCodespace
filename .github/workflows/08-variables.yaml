@@ -1,0 +1,30 @@
+name: 08 - Using variables
+on:
+    push:
+    workflow_dispatch:
+env: 
+    GLOBAL_VAR: "This is a global variable"
+    overwrite_var: "This is a global variable that will be overwritten in the job env section"
+jobs:
+    echo:
+        runs-on: ubuntu-latest
+        env:
+            JOB_VAR: "This is a variable from the job env section"
+            overwrite_var: "This is a variable from the job env section that will be overwritten in the step env section"
+        steps:
+            - name: Display variables from env section
+              env:
+                STEP_VAR: "This is a overwritten from the step env section"
+                step_var2: "This is another variable from the step env section"
+                overwrite_var: "This is a variable from the step env section that will overwrite the job and global variable"
+              run: |
+                  echo "The variable step var value is ${{env.STEP_VAR}}"
+                  echo "The variable step var 2 value is: $env.step_var2"
+                  echo "The variable job var value is ${{env.JOB_VAR}}"
+                  echo "The variable global var value is ${{env.GLOBAL_VAR}}"
+                  echo "The variable overwrite var value is ${{env.overwrite_var}}"
+            - name: Display variables using vars context
+              env:
+                overwrite_var: "This is a variable from the step env section that will overwrite the job and global variable"
+              run: |
+                echo "The variable overwrite var value is ${{vars.overwrite_var}}"
