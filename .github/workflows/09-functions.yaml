@@ -18,8 +18,6 @@ jobs:
         run: echo "I´m a bug fix"
       - name: Sleeps for 20 seconds
         run: sleep 20
-      - name: Failing step
-        run: exit 1
       - name: This step will be skipped
         if: ${{ success() }}
         run: echo "Print if previous step was successful"
