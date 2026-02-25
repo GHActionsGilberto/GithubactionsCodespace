@@ -18,7 +18,6 @@ jobs:
         run: echo "Building code..."
   unit-tests:
     runs-on: ubuntu-latest
-    needs: lint-build
     steps:
       - name: Running unit tests
         run: echo "Running unit tests..."
